@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+  head
+    title="Valentin Sarychev"
+    for style in styles
+      link(rel="stylesheet", href="#{style}")
+    for script in scripts
+      script(src="#{script}")
+  body
+    h1 Jade - node template engine

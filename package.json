@@ -1,0 +1,27 @@
+{
+  "name": "dizel3d.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dizel3d@github.com/dizel3d/dizel3d.github.io.git"
+  },
+  "author": "dizel3d@gmail.com",
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/dizel3d/dizel3d.github.io/issues"
+  },
+  "homepage": "https://github.com/dizel3d/dizel3d.github.io",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jade": "^0.13.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sync": "^0.2.0"
+  }
+}
