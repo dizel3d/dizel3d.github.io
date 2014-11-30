@@ -1,10 +1,11 @@
 doctype html
 html(lang="en")
   head
-    title="Valentin Sarychev"
+    meta(charset="utf-8")
+    title="#{name}"
     for style in styles
       link(rel="stylesheet", href="#{style}")
     for script in scripts
       script(src="#{script}")
   body
-    h1 Jade - node template engine
+    | #{name}

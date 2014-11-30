@@ -1,19 +1,44 @@
+_ = require('underscore')
+Mustache = require('mustache')
+
+compileStrings = (obj, context) ->
+  context = context || obj
+  if _.isString(obj)
+    return Mustache.render(obj, context)
+  if _.isArray(obj)
+    return _.map(obj, (value) -> compileStrings(value, context))
+  if _.isObject(obj)
+    return _.reduce(obj, ((newObj, value, key) ->
+      newObj[key] = compileStrings(value, context)
+      return newObj
+    ), {})
+  return obj
+
 module.exports = (grunt) ->
+
+  model = _.extend({
+      styles: [
+        'packages/bootstrap/css/bootstrap.css'
+      ],
+      scripts: [
+        'packages/jquery/jquery.js'
+        'packages/bootstrap/bootstrap.js'
+      ]
+    },
+    grunt.file.readJSON('src/model.json'),
+    grunt.file.readJSON('src/i18n/locale-en.json')
+  )
+
+  viewModel = _.extend(compileStrings(model), {
+    model: model
+  })
 
   grunt.initConfig({
     jade: {
       debug: {
         options: {
           pretty: true,
-          data: {
-            styles: [
-              'packages/bootstrap/css/bootstrap.css'
-            ],
-            scripts: [
-              'packages/jquery/jquery.js'
-              'packages/bootstrap/bootstrap.js'
-            ]
-          }
+          data: viewModel
         },
         files: {
           'dist/index.html': 'src/index.jade'
@@ -67,9 +92,9 @@ module.exports = (grunt) ->
     }
   })
 
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-sync');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jade')
+  grunt.loadNpmTasks('grunt-contrib-less')
+  grunt.loadNpmTasks('grunt-sync')
+  grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('default', ['sync:debug', 'jade:debug', 'less:debug']);
+  grunt.registerTask('default', ['sync:debug', 'jade:debug', 'less:debug'])
