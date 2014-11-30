@@ -1,3 +1,63 @@
 {
-  "MY_NAME": "Valentin Sarychev"
+  "SOFTWARE_DEVELOPER": "Software Developer",
+  "ZELENOGRAD": "Zelenograd",
+  "name": "Valentin Sarychev",
+  "jobs": {
+    "IT_GLOBAL": {
+      "organization": "IT Global LLC",
+      "projects": {
+        "OTC": {
+          "title": "The trading terminal for OTC transactions",
+          "achievements": [
+            "Prepared and lectured a short course on AngularJS",
+            "Organized workflow of developing the client side (TDD)",
+            "Developed UI-library for working with documents based on XML Schema",
+            "Optimized loading time"
+          ]
+        },
+        "RCOVER": {
+          "title": "The control system of trading risks",
+          "achievements": [
+            "Implemented the technical part of the project"
+          ]
+        },
+        "UniversalEditor": {
+          "title": "Multifunctional editor for ISO20022 documents",
+          "achievements": [
+            "Developed algorithm to merge documents based on XML Schema",
+            "Developed algorithm to automatic generate forms to edit/view documents",
+            "Integrated WPF and WinForms"
+          ]
+        },
+        "NRD_WEB": {
+          "title": "Web portal, UI for document management system",
+          "achievements": [
+            "Participated in the development of cryptographic Java-applet",
+            "Developed UI-library for working with documents based on XML Schema",
+            "Implemented building and obfuscation scripts for desktop version"
+          ]
+        },
+        "WORKSHOP": {
+          "title": "Multifunctional software for options trading \"Option Workshop\"",
+          "achievements": [
+            "Made improvements and bug fixes",
+            "Implemented an user authorization system"
+          ]
+        },
+        "NETWORK_LIB": {
+          "title": "Network library",
+          "achievements": [
+            "Developed in small team (two person)",
+            "Solved the cross-platform building problem using CMake"
+          ]
+        },
+        "VOLATILITY_DESK": {
+          "title": "Volatility desk",
+          "achievements": [
+            "Implemented the project"
+          ]
+        }
+      }
+    }
+  }
 }

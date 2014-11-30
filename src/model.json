@@ -1,9 +1,34 @@
 {
-  "name": "{{MY_NAME}}",
-  "jobs": [
-    {
-      "organization": "IT Global LLC",
-      "fromDate": ""
+  "mobile": "+7(909)999-29-55",
+  "email": "valentin.sarychev@gmail.com",
+  "jobs": {
+    "IT_GLOBAL": {
+      "fromDate": "2011.12",
+      "position": "{{SOFTWARE_DEVELOPER}}",
+      "location": "{{ZELENOGRAD}}",
+      "projects": {
+        "OTC": {
+          "tags": ["ASP.NET MVC", "ADO.NET EF", "AngularJS", "TypeScript"]
+        },
+        "RCOVER": {
+          "tags": ["ASP.NET MVC", "ADO.NET EF", "AngularJS"]
+        },
+        "UniversalEditor": {
+          "tags": ["WPF", "WinForms"]
+        },
+        "NRD_WEB": {
+          "tags": ["ASP.NET MVC", "ADO.NET EF", "jQuery", "Java"]
+        },
+        "WORKSHOP": {
+          "tags": ["WPF", "WCF"]
+        },
+        "NETWORK_LIB": {
+          "tags": ["C#", "C++11", "Boost", "Linux", "Windows"]
+        },
+        "VOLATILITY_DESK": {
+          "tags": ["WCF", "Python", "Google App Engine"]
+        }
+      }
     }
-  ]
+  }
 }

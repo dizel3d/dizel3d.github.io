@@ -1,4 +1,4 @@
-_ = require('underscore')
+_ = require('lodash')
 Mustache = require('mustache')
 
 compileStrings = (obj, context) ->
@@ -16,7 +16,7 @@ compileStrings = (obj, context) ->
 
 module.exports = (grunt) ->
 
-  model = _.extend({
+  model = _.merge({
       styles: [
         'packages/bootstrap/css/bootstrap.css'
       ],
@@ -29,9 +29,7 @@ module.exports = (grunt) ->
     grunt.file.readJSON('src/i18n/locale-en.json')
   )
 
-  viewModel = _.extend(compileStrings(model), {
-    model: model
-  })
+  viewModel = compileStrings(model)
 
   grunt.initConfig({
     jade: {
@@ -62,8 +60,15 @@ module.exports = (grunt) ->
       }
     }
     watch: {
+      printViewModel: {
+        files: ['src/**/*.json'],
+        tasks: ['printViewModel'],
+        options: {
+          atBegin: true
+        }
+      },
       jade: {
-        files: ['src/**/*.jade'],
+        files: ['src/**/*.jade', 'src/**/*.json'],
         tasks: ['jade:debug'],
         options: {
           atBegin: true
@@ -97,4 +102,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-sync')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('default', ['sync:debug', 'jade:debug', 'less:debug'])
+  grunt.registerTask('printViewModel', () -> grunt.file.write('dist/viewModel.json', JSON.stringify(viewModel, null, 2)))
+  grunt.registerTask('default', ['printViewModel', 'sync:debug', 'jade:debug', 'less:debug'])
