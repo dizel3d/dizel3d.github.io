@@ -1,3 +1,4 @@
+jade = require('jade')
 _ = require('lodash')
 Mustache = require('mustache')
 
@@ -18,7 +19,8 @@ module.exports = (grunt) ->
 
   model = _.merge({
       styles: [
-        'packages/bootstrap/css/bootstrap.css'
+        'packages/bootstrap/css/bootstrap.css',
+        'styles.css'
       ],
       scripts: [
         'packages/jquery/jquery.js'
@@ -30,6 +32,9 @@ module.exports = (grunt) ->
   )
 
   viewModel = compileStrings(model)
+  viewModel._ = _
+  viewModel.pretty = true
+  viewModel.include = (path) => jade.renderFile('src/' + path + '.jade', viewModel)
 
   grunt.initConfig({
     jade: {
@@ -46,7 +51,8 @@ module.exports = (grunt) ->
     less: {
       debug: {
         files: {
-          'dist/packages/bootstrap/css/bootstrap.css': 'src/styles/bootstrap.less'
+          'dist/packages/bootstrap/css/bootstrap.css': 'src/styles/bootstrap.less',
+          'dist/styles.css': 'src/styles/styles.less'
         }
       }
     },

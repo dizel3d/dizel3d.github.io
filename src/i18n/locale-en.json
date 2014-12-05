@@ -1,7 +1,13 @@
 {
   "SOFTWARE_DEVELOPER": "Software Developer",
   "ZELENOGRAD": "Zelenograd",
+  "MOBILE": "Mobile",
   "name": "Valentin Sarychev",
+  "navs": {
+    "profile": "Profile",
+    "career": "Career",
+    "projects": "Projects"
+  },
   "jobs": {
     "IT_GLOBAL": {
       "organization": "IT Global LLC",
