@@ -16,7 +16,7 @@ html(lang="en")
             each navValue, navIndex in navArray
               li(role="presentation", class=navIndex?'':'active')
                 a(href="##{navValue.id}", data-toggle="tab")=navValue.title
-        h3(class="text-muted")=name
+        h3(class="text-muted text-uppercase")=name
       div(class="tab-content")
         each navValue, navIndex in navArray
           div(role="tabpanel", class="tab-pane fade #{navIndex ? '' : 'in active'}", id="#{navValue.id}")

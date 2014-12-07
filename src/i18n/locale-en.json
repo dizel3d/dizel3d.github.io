@@ -2,6 +2,8 @@
   "SOFTWARE_DEVELOPER": "Software Developer",
   "ZELENOGRAD": "Zelenograd",
   "MOBILE": "Mobile",
+  "LOCATION": "Address",
+  "location": "Russia, {{ZELENOGRAD}}",
   "name": "Valentin Sarychev",
   "navs": {
     "profile": "Profile",
