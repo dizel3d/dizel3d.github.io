@@ -19,7 +19,6 @@ module.exports = (grunt) ->
 
   model = _.merge({
       styles: [
-        'packages/bootstrap/css/bootstrap.css',
         'styles.css'
       ],
       scripts: [
@@ -51,7 +50,6 @@ module.exports = (grunt) ->
     less: {
       debug: {
         files: {
-          'dist/packages/bootstrap/css/bootstrap.css': 'src/styles/bootstrap.less',
           'dist/styles.css': 'src/styles/styles.less'
         }
       }
@@ -62,6 +60,7 @@ module.exports = (grunt) ->
           {expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/packages/jquery'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'dist/packages/bootstrap'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/fonts/*', dest: 'dist/packages/bootstrap/fonts'}
+          {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'}
         ]
       }
     }

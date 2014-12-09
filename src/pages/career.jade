@@ -1,13 +1,21 @@
 section(class="job")
   each job in jobs
-    section(class="project")
+      p(class="lead")
+        | #{job.fromDate} #{job.position} #{job.organization} #{job.location}
       each project in job.projects
-        div(class="project")
-          div=project.title
-          div(class="tags")
-            each tag in project.tags
-              span(class="tag")=tag
-              | #{', '}
-            ul(class="achievement")
-              each achievement in project.achievements
-                li=achievement
+        div(class="container project")
+          div(class="row")
+            div(class="col-xs-2")="Project"
+            div(class="col-xs-10")=project.title
+          div(class="row")
+            div(class="col-xs-2")="Technologies"
+            div(class="col-xs-10")
+              each tag in project.tags
+                span(class="tag")=tag
+                | #{', '}
+          div(class="row")
+            div(class="col-xs-2")="Achievements"
+            div(class="col-xs-10")
+              ul(class="achievement")
+                each achievement in project.achievements
+                  li=achievement
