@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="AppCtrl" lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="name">Loading...</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="packages/jquery/jquery.js"></script>
+  <script src="packages/bootstrap/bootstrap.js"></script>
+  <script src="packages/angular/angular.js"></script>
+  <script src="packages/angular-translate/angular-translate.js"></script>
+  <script src="packages/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+<div class="container" ng-if="lang">
+  <div class="header">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active">
+          <a href="#/">{{::navs.profile}}</a>
+        </li>
+        <li role="presentation">
+          <a href="#/career">{{::navs.career}}</a>
+        </li>
+        <li role="presentation">
+          <a href="#/projects">{{::navs.projects}}</a>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted text-uppercase">{{::name}}</h3>
+  </div>
+  <div class="ng-view"></div>
+</div>
+</body>
+</html>

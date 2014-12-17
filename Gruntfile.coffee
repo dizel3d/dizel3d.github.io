@@ -1,4 +1,3 @@
-jade = require('jade')
 _ = require('lodash')
 Mustache = require('mustache')
 
@@ -16,37 +15,7 @@ compileStrings = (obj, context) ->
   return obj
 
 module.exports = (grunt) ->
-
-  model = _.merge({
-      styles: [
-        'styles.css'
-      ],
-      scripts: [
-        'packages/jquery/jquery.js'
-        'packages/bootstrap/bootstrap.js'
-      ]
-    },
-    grunt.file.readJSON('src/model.json'),
-    grunt.file.readJSON('src/i18n/locale-en.json')
-  )
-
-  viewModel = compileStrings(model)
-  viewModel._ = _
-  viewModel.pretty = true
-  viewModel.include = (path) => jade.renderFile('src/' + path + '.jade', viewModel)
-
   grunt.initConfig({
-    jade: {
-      debug: {
-        options: {
-          pretty: true,
-          data: viewModel
-        },
-        files: {
-          'dist/index.html': 'src/index.jade'
-        }
-      }
-    },
     less: {
       debug: {
         files: {
@@ -58,23 +27,21 @@ module.exports = (grunt) ->
       debug: {
         files: [
           {expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/packages/jquery'},
+          {expand: true, flatten: true, src: 'bower_components/angular/angular.js', dest: 'dist/packages/angular'},
+          {expand: true, flatten: true, src: 'bower_components/angular-route/angular-route.js', dest: 'dist/packages/angular-route'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'dist/packages/bootstrap'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/fonts/*', dest: 'dist/packages/bootstrap/fonts'}
-          {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'}
+          {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'},
+          {expand: true, flatten: true, src: 'src/app.js', dest: 'dist'},
+          {expand: true, flatten: true, src: 'src/index.html', dest: 'dist'},
+          {expand: true, flatten: true, src: 'src/pages/*', dest: 'dist/pages'}
         ]
       }
     }
     watch: {
-      printViewModel: {
+      compileModels: {
         files: ['src/**/*.json'],
-        tasks: ['printViewModel'],
-        options: {
-          atBegin: true
-        }
-      },
-      jade: {
-        files: ['src/**/*.jade', 'src/**/*.json'],
-        tasks: ['jade:debug'],
+        tasks: ['compileModels'],
         options: {
           atBegin: true
         }
@@ -87,7 +54,7 @@ module.exports = (grunt) ->
         }
       },
       sync: {
-        files: []
+        files: ['src/app.js', 'src/**/*.html'],
         tasks: ['sync:debug'],
         options: {
           atBegin: true
@@ -95,6 +62,7 @@ module.exports = (grunt) ->
       }
       configFiles: {
         files: ['Gruntfile.coffee'],
+        tasks: ['default'],
         options: {
           reload: true
         }
@@ -102,10 +70,15 @@ module.exports = (grunt) ->
     }
   })
 
-  grunt.loadNpmTasks('grunt-contrib-jade')
   grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-sync')
   grunt.loadNpmTasks('grunt-contrib-watch')
 
-  grunt.registerTask('printViewModel', () -> grunt.file.write('dist/viewModel.json', JSON.stringify(viewModel, null, 2)))
-  grunt.registerTask('default', ['printViewModel', 'sync:debug', 'jade:debug', 'less:debug'])
+  grunt.registerTask('compileModel', (lang) ->
+    grunt.file.write('dist/i18n/model-' + lang + '.json', compileStrings(JSON.stringify(_.merge(
+      grunt.file.readJSON('src/model.json'),
+      grunt.file.readJSON('src/i18n/locale-' + lang + '.json')
+    ), null, 2)))
+  )
+  grunt.registerTask('compileModels', 'compileModel:en')
+  grunt.registerTask('default', ['compileModels', 'sync:debug', 'less:debug'])

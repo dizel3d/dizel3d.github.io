@@ -3,6 +3,7 @@
   "ZELENOGRAD": "Zelenograd",
   "MOBILE": "Mobile",
   "LOCATION": "Address",
+  "lang": "en",
   "location": "Russia, {{ZELENOGRAD}}",
   "name": "Valentin Sarychev",
   "navs": {
