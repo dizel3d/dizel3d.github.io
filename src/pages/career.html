@@ -4,18 +4,18 @@
   </p>
   <div class="container project" ng-repeat-end ng-repeat="project in ::job.projects">
     <div class="row">
-      <div class="col-xs-2">Project</div>
+      <div class="col-xs-2">{{::PROJECT}}</div>
       <div class="col-xs-10">{{::project.title}}</div>
     </div>
     <div class="row">
-      <div class="col-xs-2">Technologies</div>
+      <div class="col-xs-2">{{::TECHNOLOGIES}}</div>
       <div class="col-xs-10">
         <span ng-repeat-start="tag in ::project.tags" ng-if="::!$first">,</span>
         <span class="tag" ng-repeat-end>{{::tag}}</span>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-2">Achievements</div>
+      <div class="col-xs-2">{{::ACHIEVEMENTS}}</div>
       <div class="col-xs-10">
         <ul>
           <li ng-repeat="achievement in ::project.achievements">

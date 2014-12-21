@@ -75,10 +75,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-watch')
 
   grunt.registerTask('compileModel', (lang) ->
-    grunt.file.write('dist/i18n/model-' + lang + '.json', compileStrings(JSON.stringify(_.merge(
+    model = compileStrings(_.merge(
       grunt.file.readJSON('src/model.json'),
       grunt.file.readJSON('src/i18n/locale-' + lang + '.json')
-    ), null, 2)))
+    ), null, 2)
+    grunt.file.write('dist/i18n/model-' + lang + '.json', JSON.stringify(model))
   )
-  grunt.registerTask('compileModels', 'compileModel:en')
+  grunt.registerTask('compileModels', ['compileModel:en', 'compileModel:ru'])
   grunt.registerTask('default', ['compileModels', 'sync:debug', 'less:debug'])

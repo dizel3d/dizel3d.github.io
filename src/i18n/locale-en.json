@@ -3,7 +3,9 @@
   "ZELENOGRAD": "Zelenograd",
   "MOBILE": "Mobile",
   "LOCATION": "Address",
-  "lang": "en",
+  "PROJECT": "Project",
+  "TECHNOLOGIES": "Technologies",
+  "ACHIEVEMENTS": "Achievements",
   "location": "Russia, {{ZELENOGRAD}}",
   "name": "Valentin Sarychev",
   "navs": {

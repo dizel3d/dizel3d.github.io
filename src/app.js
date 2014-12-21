@@ -13,10 +13,24 @@
         });
     }]);
 
-    mod.controller('AppCtrl', ['$scope', '$route', '$http', function($scope, $route, $http) {
-        $http.get('/i18n/model-en.json').success(function(model) {
-            angular.extend($scope, model);
-            $route.reload();
-        });
+    mod.controller('AppCtrl', ['$scope', '$route', '$http', '$timeout', function($scope, $route, $http, $timeout) {
+        var langKey = 'lang';
+        $scope.languages = {
+            en: 'English',
+            ru: 'Русский'
+        };
+        $scope.setLang = function(lang) {
+            $scope.lang = lang;
+            $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
+            $scope.language = $scope.languages[lang];
+            $http.get('/i18n/model-' + lang + '.json').success(function(model) {
+                $timeout(function() {
+                    angular.extend($scope, model);
+                    $scope.loading = null;
+                    localStorage[langKey] = lang;
+                }, 2000);
+            });
+        };
+        $scope.setLang(localStorage[langKey] || navigator.language || 'en');
     }]);
 })();
