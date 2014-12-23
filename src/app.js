@@ -24,12 +24,25 @@
             $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
             $scope.language = $scope.languages[lang];
             $http.get('/i18n/model-' + lang + '.json').success(function(model) {
+                // convert ISO dates to JavaScript Date
+                (function convertDates(obj) {
+                    angular.forEach(obj, function(value, key) {
+                        if (angular.isObject(value)) {
+                            convertDates(value);
+                        } else if (/Date$/.test(key)) {
+                            obj[key] = new Date(value);
+                        }
+                    });
+                })(model);
+
+                // convert specific objects to arrays
                 model.job = $.map(model.jobs, function(job) {
                     job.projects = $.map(job.projects, function(project) {
                         return project;
                     });
                     return job;
                 });
+
                 angular.extend($scope, model);
                 $scope.loading = null;
                 localStorage[langKey] = lang;

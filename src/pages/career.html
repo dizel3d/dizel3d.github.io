@@ -1,6 +1,6 @@
 <div class="job">
   <p class="lead" ng-repeat-start="job in ::jobs">
-    {{::job.fromDate}} {{::job.position}} {{::job.organization}} {{::job.location}}
+    {{::job.fromDate | date: 'MMMM yyyy'}} {{::job.position}} {{::job.organization}} {{::job.location}}
   </p>
   <div class="container project" ng-repeat-end ng-repeat="project in ::job.projects">
     <div class="row">
