@@ -24,13 +24,33 @@
             $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
             $scope.language = $scope.languages[lang];
             $http.get('/i18n/model-' + lang + '.json').success(function(model) {
-                $timeout(function() {
-                    angular.extend($scope, model);
-                    $scope.loading = null;
-                    localStorage[langKey] = lang;
-                }, 2000);
+                model.job = $.map(model.jobs, function(job) {
+                    job.projects = $.map(job.projects, function(project) {
+                        return project;
+                    });
+                    return job;
+                });
+                angular.extend($scope, model);
+                $scope.loading = null;
+                localStorage[langKey] = lang;
             });
         };
         $scope.setLang(localStorage[langKey] || navigator.language || 'en');
+    }]);
+
+    mod.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
+        function Nav(url, title) {
+            this.url = url;
+            this.title = title;
+        }
+        Nav.prototype.isActive = function() {
+            return $location.path() === this.url;
+        };
+
+        $scope.navs = [
+            new Nav('/', $scope.navs.profile),
+            new Nav('/career', $scope.navs.career),
+            new Nav('/projects', $scope.navs.projects)
+        ]
     }]);
 })();

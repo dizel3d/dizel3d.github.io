@@ -13,16 +13,10 @@
 <body>
 <div class="container" ng-if="!loading">
   <div class="header">
-    <nav>
+    <nav ng-controller="NavCtrl">
       <ul class="nav nav-pills pull-right">
-        <li role="presentation" class="active">
-          <a href="#/">{{::navs.profile}}</a>
-        </li>
-        <li role="presentation">
-          <a href="#/career">{{::navs.career}}</a>
-        </li>
-        <li role="presentation">
-          <a href="#/projects">{{::navs.projects}}</a>
+        <li role="presentation" ng-class="{active: nav.isActive()}" ng-repeat="nav in ::navs">
+          <a ng-href="#{{::nav.url}}">{{::nav.title}}</a>
         </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="return false;" role="button" aria-expanded="false">
@@ -42,6 +36,9 @@
     <h3 class="text-muted text-uppercase">{{::name}}</h3>
   </div>
   <div class="ng-view"></div>
+  <footer class="footer">
+    <p class="text-center">valentin.sarychev@gmail.com</p>
+  </footer>
 </div>
 </body>
 </html>
