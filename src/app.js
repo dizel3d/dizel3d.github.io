@@ -1,5 +1,5 @@
 (function() {
-    var mod = angular.module('app', ['ngRoute']);
+    var mod = angular.module('app', ['ngRoute', 'angularMoment']);
 
     mod.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
@@ -13,7 +13,7 @@
         });
     }]);
 
-    mod.controller('AppCtrl', ['$scope', '$route', '$http', '$timeout', function($scope, $route, $http, $timeout) {
+    mod.controller('AppCtrl', ['$scope', '$route', '$http', '$timeout', 'amMoment', function($scope, $route, $http, $timeout, amMoment) {
         var langKey = 'lang';
         $scope.languages = {
             en: 'English',
@@ -23,6 +23,7 @@
             $scope.lang = lang;
             $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
             $scope.language = $scope.languages[lang];
+            amMoment.changeLocale(lang);
             $http.get('/i18n/model-' + lang + '.json').success(function(model) {
                 // convert ISO dates to JavaScript Date
                 (function convertDates(obj) {
@@ -66,4 +67,10 @@
             new Nav('/projects', $scope.navs.projects)
         ]
     }]);
+
+    mod.filter('capitalize', function() {
+        return function(value) {
+            return angular.isString(value) ? value[0].toUpperCase() + value.substr(1) : value;
+        };
+    });
 })();

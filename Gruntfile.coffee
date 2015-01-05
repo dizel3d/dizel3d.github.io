@@ -29,6 +29,9 @@ module.exports = (grunt) ->
           {expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/packages/jquery'},
           {expand: true, flatten: true, src: 'bower_components/angular/angular.js', dest: 'dist/packages/angular'},
           {expand: true, flatten: true, src: 'bower_components/angular-route/angular-route.js', dest: 'dist/packages/angular-route'},
+          {expand: true, flatten: true, src: 'bower_components/angular-moment/angular-moment.js', dest: 'dist/packages/angular-moment'},
+          {expand: true, flatten: true, src: 'bower_components/moment/moment.js', dest: 'dist/packages/moment'},
+          {expand: true, flatten: true, src: 'bower_components/moment/locale/ru.js', dest: 'dist/packages/moment/locale'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'dist/packages/bootstrap'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/fonts/*', dest: 'dist/packages/bootstrap/fonts'}
           {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'},
