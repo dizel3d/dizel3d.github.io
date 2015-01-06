@@ -7,6 +7,7 @@
   "TECHNOLOGIES": "Technologies",
   "ACHIEVEMENTS": "Achievements",
   "PROFESSIONAL_PROGRAMMER": "professional programmer",
+  "TO_PRESENT": "to present",
   "location": "Russia, {{ZELENOGRAD}}",
   "name": "Valentin Sarychev",
   "navs": {
@@ -67,6 +68,42 @@
           "title": "Volatility desk",
           "achievements": [
             "Implemented the project"
+          ]
+        },
+        "TRADING_BOT": {
+          "title": "Trading bot",
+          "achievements": [
+            "Developed in small team (two person)"
+          ]
+        }
+      }
+    },
+    "ANG_TEL": {
+      "organization": "Angstrem Telekom CJSC",
+      "projects": {
+        "CLI": {
+          "title": "MSA devices",
+          "achievements": [
+            "Developed a SHDSL-transceivers management module",
+            "Implemented test system for MSA devices"
+          ]
+        },
+        "IGMP_snooping": {
+          "title": "IGMP snooping",
+          "achievements": [
+            "Implemented the IGMP snooping for network switches"
+          ]
+        }
+      }
+    },
+    "TT": {
+      "organization": "TT LLC",
+      "projects": {
+        "POS": {
+          "title": "POS-terminal YARUS",
+          "achievements": [
+            "Developed a check printing service for POS-terminal",
+            "Implement the API to work with ISO8583 protocol"
           ]
         }
       }

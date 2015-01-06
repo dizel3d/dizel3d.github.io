@@ -27,6 +27,34 @@
         },
         "VOLATILITY_DESK": {
           "tags": ["WCF", "Python", "Google App Engine"]
+        },
+        "TRADING_BOT": {
+          "tags": ["WPF"]
+        }
+      }
+    },
+    "ANG_TEL": {
+      "fromDate": "2010.06",
+      "toDate": "2012.01",
+      "position": "{{SOFTWARE_DEVELOPER}}",
+      "location": "{{ZELENOGRAD}}",
+      "projects": {
+        "CLI": {
+          "tags": ["C", "Quantum Leaps QP", "Python", "uClinux"]
+        },
+        "IGMP_snooping": {
+          "tags": ["C", "uClinux"]
+        }
+      }
+    },
+    "TT": {
+      "fromDate": "2009.07",
+      "toDate": "2009.12",
+      "position": "{{SOFTWARE_DEVELOPER}}",
+      "location": "{{ZELENOGRAD}}",
+      "projects": {
+        "POS": {
+          "tags": ["С++", "Boost", "Linux"]
         }
       }
     }

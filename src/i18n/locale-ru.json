@@ -7,6 +7,7 @@
   "TECHNOLOGIES": "Технологии",
   "ACHIEVEMENTS": "Достижения",
   "PROFESSIONAL_PROGRAMMER": "профессиональный программист",
+  "TO_PRESENT": "по н. вр.",
   "location": "Россия, {{ZELENOGRAD}}",
   "name": "Валентин Сарычев",
   "navs": {
@@ -16,7 +17,7 @@
   },
   "jobs": {
     "IT_GLOBAL": {
-      "organization": "ООО АйТи Глобал",
+      "organization": "ООО «АйТи Глобал»",
       "projects": {
         "OTC": {
           "title": "Торговый терминал для внебиржевых сделок   ",
@@ -67,6 +68,42 @@
           "title": "Таблица волатильности",
           "achievements": [
             "Реализовал проект"
+          ]
+        },
+        "TRADING_BOT": {
+          "title": "Торговый робот",
+          "achievements": [
+            "Реализовал проект совместно с коллегой"
+          ]
+        }
+      }
+    },
+    "ANG_TEL": {
+      "organization": "ЗАО «Ангстрем Телеком»",
+      "projects": {
+        "CLI": {
+          "title": "Оборудование АМД",
+          "achievements": [
+            "Разработал модуль управления SHDSL-приемопередатчиками",
+            "Реализовал систему тестирования оборудования АМД"
+          ]
+        },
+        "IGMP_snooping": {
+          "title": "IGMP snooping",
+          "achievements": [
+            "Реализовал IGMP snooping для сетевых коммутаторов"
+          ]
+        }
+      }
+    },
+    "TT": {
+      "organization": "ООО «ТТ»",
+      "projects": {
+        "POS": {
+          "title": "POS-терминал YARUS",
+          "achievements": [
+            "Разработал службу печати чеков на POS-терминале",
+            "Реализовал API для работы с протоколом ISO8583"
           ]
         }
       }

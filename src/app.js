@@ -37,7 +37,7 @@
                 })(model);
 
                 // convert specific objects to arrays
-                model.job = $.map(model.jobs, function(job) {
+                model.jobs = $.map(model.jobs, function(job) {
                     job.projects = $.map(job.projects, function(project) {
                         return project;
                     });
@@ -70,7 +70,7 @@
 
     mod.filter('capitalize', function() {
         return function(value) {
-            return angular.isString(value) ? value[0].toUpperCase() + value.substr(1) : value;
+            return value && angular.isString(value) ? value[0].toUpperCase() + value.substr(1) : value;
         };
     });
 })();

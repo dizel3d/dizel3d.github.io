@@ -1,12 +1,15 @@
-<div class="job">
-  <small class="pull-right" ng-repeat-start="job in ::jobs">
+<div class="job" ng-repeat="job in ::jobs">
+  <small class="pull-right">
     <div>{{::job.organization}}, {{::job.location}}</div>
     <div>{{::job.position}}</div>
   </small>
   <p class="lead">
     <span>{{::job.fromDate | amDateFormat: 'MMMM YYYY' | capitalize}}</span>
+    <span>&mdash;</span>
+    <span ng-if="::job.toDate">{{::job.toDate | amDateFormat: 'MMMM YYYY'}}</span>
+    <span ng-if="::!job.toDate">{{::TO_PRESENT}}</span>
   </p>
-  <div class="container-fluid project" ng-repeat-end ng-repeat="project in ::job.projects">
+  <div class="container-fluid project"ng-repeat="project in ::job.projects">
     <div class="row">
       <div class="col-xs-2">{{::PROJECT}}</div>
       <div class="col-xs-10">{{::project.title}}</div>
