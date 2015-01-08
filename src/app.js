@@ -20,7 +20,7 @@
             ru: 'Русский'
         };
         $scope.setLang = function(lang) {
-            $scope.lang = lang;
+            $scope.$root.lang = lang;
             $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
             $scope.language = $scope.languages[lang];
             amMoment.changeLocale(lang);
@@ -43,6 +43,12 @@
                     });
                     return job;
                 });
+
+                model.workExperienceYears = model.jobs.reduce(function(sum, job) {
+                    return sum + moment(job.toDate).diff(job.fromDate, 'years', true);
+                }, 0);
+
+                model.ageYears = moment().diff(model.birthdayDate, 'years', true);
 
                 angular.extend($scope, model);
                 $scope.loading = null;
@@ -73,4 +79,11 @@
             return value && angular.isString(value) ? value[0].toUpperCase() + value.substr(1) : value;
         };
     });
+
+    mod.filter('fixed', ['$rootScope', function($rootScope) {
+        return function(value, fractionDigits) {
+            var point = $rootScope.lang === 'ru' ? ',' : '.';
+            return angular.isNumber(value) ? value.toFixed(fractionDigits).replace('.', point) : value;
+        };
+    }]);
 })();

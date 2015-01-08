@@ -30,24 +30,29 @@
 
 <div class="row marketing">
   <div class="col-lg-6">
-    <h4>Subheading</h4>
-    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+    <h4>{{::ABOUT_ME}}</h4>
+    <p>
+      {{::BIRTHDAY_DATE}}: <span ng-bind="::birthdayDate | amDateFormat: 'L'"></span> (<span ng-bind="::ageYears | fixed:1"></span> {{::YEARS}})<br/>
+      {{::WORK_EXPERIENCE}}: <span ng-bind="::workExperienceYears | fixed:1"></span> {{::YEARS}}<br/>
+      {{::PREFERENCES}}: {{::preferences.join(', ')}}
+    </p>
 
-    <h4>Subheading</h4>
-    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+    <h4>{{::EDUCATION}}</h4>
+    <p>{{::MIEE_EDUCATION}}</p>
 
-    <h4>Subheading</h4>
-    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <h4>{{::SOCIAL_NETWORKS}}</h4>
+    <p>
+      <a target="_blank" href="https://github.com/dizel3d">GitHub</a>,
+      <a target="_blank" href="http://stackoverflow.com/users/947687/dizel3d">StackOverflow</a>
+    </p>
   </div>
 
   <div class="col-lg-6">
-    <h4>Subheading</h4>
-    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-    <h4>Subheading</h4>
-    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-    <h4>Subheading</h4>
-    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <h4>{{::LANGUAGES_AND_TECHNOLOGIES}}</h4>
+    <p><i>{{::PROGRAMMING_AND_MARKUP_LANGUAGES}}</i>: {{::programming_and_markup_languages.join(', ')}}</p>
+    <p><i>{{::POPULAR_LIBRARIES_AND_FRAMEWORKS}}</i>: {{::popular_libraries_and_frameworks.join(', ')}}</p>
+    <p><i>{{::SOFTWARE}}</i>: {{::software.join(', ')}}</p>
+    <p><i>{{::OS_USER}}</i>: {{::os_user.join(', ')}}</p>
+    </p>
   </div>
 </div>
