@@ -11,6 +11,7 @@ body {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -138,4 +139,14 @@ body {
 
 .job {
   padding-top: 20px;
+}
+
+.ng-view {
+  &.ng-enter {
+    opacity: 0;
+    .transition(0.3s);
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 (function() {
-    var mod = angular.module('app', ['ngRoute', 'angularMoment']);
+    var mod = angular.module('app', ['ngAnimate', 'ngRoute', 'angularMoment']);
 
     mod.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {

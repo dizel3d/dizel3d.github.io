@@ -28,6 +28,7 @@ module.exports = (grunt) ->
         files: [
           {expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/packages/jquery'},
           {expand: true, flatten: true, src: 'bower_components/angular/angular.js', dest: 'dist/packages/angular'},
+          {expand: true, flatten: true, src: 'bower_components/angular-animate/angular-animate.js', dest: 'dist/packages/angular-animate'},
           {expand: true, flatten: true, src: 'bower_components/angular-route/angular-route.js', dest: 'dist/packages/angular-route'},
           {expand: true, flatten: true, src: 'bower_components/angular-moment/angular-moment.js', dest: 'dist/packages/angular-moment'},
           {expand: true, flatten: true, src: 'bower_components/moment/moment.js', dest: 'dist/packages/moment'},
