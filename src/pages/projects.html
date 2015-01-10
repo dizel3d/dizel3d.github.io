@@ -1,3 +1,4 @@
+<p>{{::PROJECTS_PAGE_ABOUT}}</p>
 <div class="projects-page">
     <div ng-repeat="project in ::projects" class="project-wrapper">
         <div class="project-block">
@@ -11,7 +12,13 @@
                 </a>
             </div>
             <div class="project-info project-title"><b>{{::project.title}}</b></div>
-            <p class="project-info" ng-bind-html="::project.description"></p>
+            <p class="project-info">
+                <span ng-bind-html="::project.description"></span><br/>
+                <small>
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    {{::'' + project.fromDate.getFullYear() + (project.toDate ? ' - ' + project.toDate.getFullYear() : '')}}
+                </small>
+            </p>
             <div class="project-info">
                 <span ng-repeat-start="tag in ::project.tags" ng-if="::!$first">,</span>
                 <small class="tag" ng-repeat-end><i class="glyphicon glyphicon-tag"></i> {{::tag}}</small>

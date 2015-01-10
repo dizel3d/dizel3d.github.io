@@ -24,6 +24,7 @@
   "OS_USER": "OS user",
   "SOCIAL_NETWORKS": "Social networks",
   "CAREER_PAGE_ABOUT": "This page lists my achievements in projects in organizations in which I worked/work, as well as the technologies used in the projects",
+  "PROJECTS_PAGE_ABOUT": "The following are the projects developed in my spare time.",
   "location": "Russia, {{ZELENOGRAD}}",
   "name": "Valentin Sarychev",
   "navs": {

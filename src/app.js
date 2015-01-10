@@ -43,6 +43,9 @@
                     });
                     return job;
                 });
+                model.projects = $.map(model.projects, function(project) {
+                    return project;
+                });
 
                 model.workExperienceYears = model.jobs.reduce(function(sum, job) {
                     return sum + moment(job.toDate).diff(job.fromDate, 'years', true);
