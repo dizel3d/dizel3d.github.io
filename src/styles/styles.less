@@ -150,3 +150,48 @@ body {
     }
   }
 }
+
+.projects-page {
+  margin: 0 -10px 30px -10px;
+}
+.project-wrapper {
+  display: inline-flex;
+  width: 50%;
+  padding: 10px;
+}
+.project-block {
+  border: 4px solid @legend-border-color;
+  height: 200px;
+  position: relative;
+  border-radius: @border-radius-base;
+  padding: 10px;
+  .transition(0.3s);
+  cursor: default;
+  &:hover {
+    border-color: darken(@legend-border-color, 15%);
+    .project-image {
+      opacity: 0.2;
+    }
+  }
+  .tag {
+    border-radius: @border-radius-small;
+    color: #ffffff;
+    background-color: @btn-info-bg;
+    padding: 4px;
+  }
+}
+.project-image {
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0.05;
+  .transition(0.3s);
+}
+.project-title {
+  margin: 0 0 10px;
+}

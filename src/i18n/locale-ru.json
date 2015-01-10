@@ -124,5 +124,23 @@
         }
       }
     }
+  },
+  "projects": {
+    "angular-jqwhen": {
+      "title": "Библиотека JavaScript angular-jqwhen",
+      "description": "Метод расширения jqwhen для сервиса Angular $q, преобразующий объекты Angular Promise в объекты jQuery Promise."
+    },
+    "bicycles": {
+      "title": "Промо-страницы для интернет-магазина спорттоваров",
+      "description": "Промо-страницы выполнены для двух линеек велосипедов: kross-level и kross-hex."
+    },
+    "taglib-js": {
+      "title": "Плагин к браузерам taglib-js",
+      "description": "Расширение JavaScript для чтения/записи информации об аудиофайлах."
+    },
+    "vk4": {
+      "title": "UserJS-плагин vk4",
+      "description": "Плагин к <a target='_blank' href='//vk.com'>Вконтакте</a> для скачивания музыки. <u>Более 35 тысяч установок.</u>"
+    }
   }
 }

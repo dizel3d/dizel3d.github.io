@@ -124,5 +124,23 @@
         }
       }
     }
+  },
+  "projects": {
+    "angular-jqwhen": {
+      "title": "JavaScript library \"angular-jqwhen\"",
+      "description": "jqWhen is AngularJS to jQuery promise converter. It's made like $q service extension method."
+    },
+    "bicycles": {
+      "title": "Landing pages for online sport shop",
+      "description": "Landing pages were made for two bicycle categories: kross-level и kross-hex."
+    },
+    "taglib-js": {
+      "title": "Browser plugin \"taglib-js\"",
+      "description": "JavaScript extension to read/to write information for audio files."
+    },
+    "vk4": {
+      "title": "UserJS extension \"vk4\"",
+      "description": "Extension for <a href='https://vk.com'>VK</a> to download music. <u>More than 35 thousands installations.</u>"
+    }
   }
 }

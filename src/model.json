@@ -64,5 +64,34 @@
         }
       }
     }
+  },
+  "projects": {
+    "angular-jqwhen": {
+      "repositoryUrl": "https://github.com/dizel3d/angular-jqwhen",
+      "fromDate": "2014",
+      "tags": ["AngularJS", "jQuery"],
+      "screenshots": ["images/jqwhen.jpg"]
+    },
+    "bicycles": {
+      "repositoryUrl": "https://github.com/dizel3d/bicycles",
+      "homepageUrl": "http://dizel3d.github.io/bicycles",
+      "fromDate": "2014",
+      "tags": ["AngularJS"],
+      "screenshots": ["images/kross-level.jpg"]
+    },
+    "taglib-js": {
+      "repositoryUrl": "https://github.com/dizel3d/taglib-js",
+      "fromDate": "2013",
+      "tags": ["C++", "JavaScript", "FireBreath"],
+      "screenshots": ["images/taglib-js.jpg"]
+    },
+    "vk4": {
+      "repositoryUrl": "https://github.com/dizel3d/vkach",
+      "homepageUrl": "http://userscripts-mirror.org/scripts/show/117252",
+      "fromDate": "2011",
+      "toDate": "2013",
+      "tags": ["jQuery", "Flash"],
+      "screenshots": ["images/vk4.jpg"]
+    }
   }
 }

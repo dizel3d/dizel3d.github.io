@@ -29,6 +29,7 @@ module.exports = (grunt) ->
           {expand: true, flatten: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/packages/jquery'},
           {expand: true, flatten: true, src: 'bower_components/angular/angular.js', dest: 'dist/packages/angular'},
           {expand: true, flatten: true, src: 'bower_components/angular-animate/angular-animate.js', dest: 'dist/packages/angular-animate'},
+          {expand: true, flatten: true, src: 'bower_components/angular-sanitize/angular-sanitize.js', dest: 'dist/packages/angular-sanitize'},
           {expand: true, flatten: true, src: 'bower_components/angular-route/angular-route.js', dest: 'dist/packages/angular-route'},
           {expand: true, flatten: true, src: 'bower_components/angular-moment/angular-moment.js', dest: 'dist/packages/angular-moment'},
           {expand: true, flatten: true, src: 'bower_components/moment/moment.js', dest: 'dist/packages/moment'},
@@ -38,7 +39,8 @@ module.exports = (grunt) ->
           {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'},
           {expand: true, flatten: true, src: 'src/app.js', dest: 'dist'},
           {expand: true, flatten: true, src: 'src/index.html', dest: 'dist'},
-          {expand: true, flatten: true, src: 'src/pages/*', dest: 'dist/pages'}
+          {expand: true, flatten: true, src: 'src/pages/*', dest: 'dist/pages'},
+          {expand: true, flatten: true, src: 'src/images/*', dest: 'dist/images'}
         ]
       }
     }

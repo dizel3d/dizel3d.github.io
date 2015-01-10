@@ -1,5 +1,5 @@
 (function() {
-    var mod = angular.module('app', ['ngAnimate', 'ngRoute', 'angularMoment']);
+    var mod = angular.module('app', ['ngAnimate', 'ngSanitize', 'ngRoute', 'angularMoment']);
 
     mod.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
@@ -55,7 +55,7 @@
                 localStorage[langKey] = lang;
             });
         };
-        $scope.setLang(localStorage[langKey] || navigator.language || 'en');
+        $scope.setLang((localStorage[langKey] || navigator.language || 'en').substr(0, 2));
     }]);
 
     mod.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
