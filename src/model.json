@@ -1,5 +1,5 @@
 {
-  "birthdayDate": "1990.07.30",
+  "birthdayDate": "1990-07-30",
   "mobile": "+7(909)999-29-55",
   "email": "valentin.sarychev@gmail.com",
   "preferences": ["{{WEB_DEVELOPMENT}}", "JavaScript"],
@@ -9,7 +9,7 @@
   "os_user": ["Windows", "Linux", "Mac OS"],
   "jobs": {
     "IT_GLOBAL": {
-      "fromDate": "2011.12",
+      "fromDate": "2011-12",
       "position": "{{SOFTWARE_DEVELOPER}}",
       "location": "{{ZELENOGRAD}}",
       "projects": {
@@ -40,8 +40,8 @@
       }
     },
     "ANG_TEL": {
-      "fromDate": "2010.06",
-      "toDate": "2012.01",
+      "fromDate": "2010-06",
+      "toDate": "2012-01",
       "position": "{{SOFTWARE_DEVELOPER}}",
       "location": "{{ZELENOGRAD}}",
       "projects": {
@@ -54,8 +54,8 @@
       }
     },
     "TT": {
-      "fromDate": "2009.07",
-      "toDate": "2009.12",
+      "fromDate": "2009-07",
+      "toDate": "2009-12",
       "position": "{{SOFTWARE_DEVELOPER}}",
       "location": "{{ZELENOGRAD}}",
       "projects": {

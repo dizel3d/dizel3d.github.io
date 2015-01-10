@@ -19,7 +19,7 @@
       <div class="col-xs-2">{{::TECHNOLOGIES}}</div>
       <div class="col-xs-10">
         <span ng-repeat-start="tag in ::project.tags" ng-if="::!$first">,</span>
-        <span class="tag" ng-repeat-end>{{::tag}}</span>
+        <small class="tag" ng-repeat-end><i class="glyphicon glyphicon-tag"></i> {{::tag}}</small>
       </div>
     </div>
     <div class="row">
