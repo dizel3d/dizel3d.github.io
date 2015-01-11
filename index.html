@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-strict-di ng-app="app" ng-controller="AppCtrl" lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <link href="images/avatar.jpeg" rel="shortcut icon" type="image/jpeg" />
+  <title ng-bind="loading ? loading : name">Valentin Sarychev</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="packages/jquery/jquery.js"></script>
+  <script src="packages/moment/moment.js"></script>
+  <script src="packages/moment/locale/ru.js"></script>
+  <script src="packages/bootstrap/bootstrap.js"></script>
+  <script src="packages/angular/angular.js"></script>
+  <script src="packages/angular-animate/angular-animate.js"></script>
+  <script src="packages/angular-sanitize/angular-sanitize.js"></script>
+  <script src="packages/angular-route/angular-route.js"></script>
+  <script src="packages/angular-moment/angular-moment.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+<div class="container" ng-if="!loading">
+  <div class="header">
+    <nav ng-controller="NavCtrl">
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation" ng-class="{active: nav.isActive()}" ng-repeat="nav in ::navs">
+          <a ng-href="#{{::nav.url}}">{{::nav.title}}</a>
+        </li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="return false;" role="button" aria-expanded="false">
+            {{::language}} <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="javascript:void(0)" ng-click="setLang('en')">{{::languages['en']}}</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" ng-click="setLang('ru')">{{::languages['ru']}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted text-uppercase">{{::name}}</h3>
+  </div>
+  <div class="ng-view"></div>
+  <footer class="footer">
+    <p class="text-center">valentin.sarychev@gmail.com</p>
+  </footer>
+</div>
+</body>
+</html>

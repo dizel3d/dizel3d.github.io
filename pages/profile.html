@@ -1,0 +1,58 @@
+<div class="jumbotron">
+  <h1>{{::name}}</h1>
+  <h2 class="text-muted">{{::PROFESSIONAL_PROGRAMMER}}</h2>
+  <table class="contacts table">
+    <tr>
+      <td class="text-muted">
+        <i class="glyphicon glyphicon-phone"></i>
+        &nbsp;{{::MOBILE}}
+      </td>
+      <td>{{::mobile}}</td>
+    </tr>
+    <tr>
+      <td class="text-muted">
+        <i class="glyphicon glyphicon-envelope"></i>
+        &nbsp;E-mail
+      </td>
+      <td>
+        <a href="mailto:{{::email}}">{{::email}}</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-muted">
+        <i class="glyphicon glyphicon-home"></i>
+        &nbsp;{{::LOCATION}}
+      </td>
+      <td>{{::location}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>{{::ABOUT_ME}}</h4>
+    <p>
+      {{::BIRTHDAY_DATE}}: <span ng-bind="::birthdayDate | amDateFormat: 'L'"></span> (<span ng-bind="::ageYears | fixed:1"></span> {{::YEARS}})<br/>
+      {{::WORK_EXPERIENCE}}: <span ng-bind="::workExperienceYears | fixed:1"></span> {{::YEARS}}<br/>
+      {{::PREFERENCES}}: {{::preferences.join(', ')}}
+    </p>
+
+    <h4>{{::EDUCATION}}</h4>
+    <p>{{::MIEE_EDUCATION}}</p>
+
+    <h4>{{::SOCIAL_NETWORKS}}</h4>
+    <p>
+      <a target="_blank" href="https://github.com/dizel3d">GitHub</a>,
+      <a target="_blank" href="http://stackoverflow.com/users/947687/dizel3d">StackOverflow</a>
+    </p>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>{{::LANGUAGES_AND_TECHNOLOGIES}}</h4>
+    <p><i>{{::PROGRAMMING_AND_MARKUP_LANGUAGES}}</i>: {{::programming_and_markup_languages.join(', ')}}</p>
+    <p><i>{{::POPULAR_LIBRARIES_AND_FRAMEWORKS}}</i>: {{::popular_libraries_and_frameworks.join(', ')}}</p>
+    <p><i>{{::SOFTWARE}}</i>: {{::software.join(', ')}}</p>
+    <p><i>{{::OS_USER}}</i>: {{::os_user.join(', ')}}</p>
+    </p>
+  </div>
+</div>

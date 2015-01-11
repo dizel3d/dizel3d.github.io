@@ -1,0 +1,28 @@
+<p>{{::PROJECTS_PAGE_ABOUT}}</p>
+<div class="projects-page">
+    <div ng-repeat="project in ::projects" class="project-wrapper">
+        <div class="project-block">
+            <div class="project-image" ng-style="::{backgroundImage: 'url(\'' + project.screenshots[0] + '\')'}"></div>
+            <div class="btn-group pull-right" role="group">
+                <a ng-href="{{::project.repositoryUrl}}" target="_blank" ng-class="::{disabled: !project.repositoryUrl}" class="btn btn-default btn-xs">
+                    <i class="glyphicon glyphicon-home"></i>
+                </a>
+                <a ng-href="{{::project.homepageUrl}}" target="_blank" ng-class="::{disabled: !project.homepageUrl}" class="btn btn-default btn-xs">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                </a>
+            </div>
+            <div class="project-info project-title"><b>{{::project.title}}</b></div>
+            <p class="project-info">
+                <span ng-bind-html="::project.description"></span><br/>
+                <small>
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    {{::'' + project.fromDate.getFullYear() + (project.toDate ? ' - ' + project.toDate.getFullYear() : '')}}
+                </small>
+            </p>
+            <div class="project-info">
+                <span ng-repeat-start="tag in ::project.tags" ng-if="::!$first">,</span>
+                <small class="tag" ng-repeat-end><i class="glyphicon glyphicon-tag"></i> {{::tag}}</small>
+            </div>
+        </div>
+    </div>
+</div>
