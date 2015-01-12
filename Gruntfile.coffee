@@ -37,6 +37,7 @@ module.exports = (grunt) ->
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'dist/packages/bootstrap'},
           {expand: true, flatten: true, src: 'bower_components/bootstrap/dist/fonts/*', dest: 'dist/packages/bootstrap/fonts'}
           {expand: true, flatten: true, src: 'bower_components/ubuntu-fontface/fonts/*', dest: 'dist/packages/ubuntu-fontface/fonts'},
+          {expand: true, flatten: true, src: 'src/CNAME', dest: 'dist'},
           {expand: true, flatten: true, src: 'src/app.js', dest: 'dist'},
           {expand: true, flatten: true, src: 'src/index.html', dest: 'dist'},
           {expand: true, flatten: true, src: 'src/pages/*', dest: 'dist/pages'},
