@@ -1,4 +1,0 @@
-[submodule "dist"]
-	path = dist
-	url = https://github.com/dizel3d/dizel3d.github.io.git
-	branch = master
