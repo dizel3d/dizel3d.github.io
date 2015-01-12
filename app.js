@@ -19,10 +19,8 @@
             en: 'English',
             ru: 'Русский'
         };
-        $scope.setLang = function(lang) {
-            // correct lang
-            lang = /^ru/i.test(lang) ? 'ru' : 'en';
-            
+        $scope.setLang = function(preferredLang) {
+            var lang = /^ru/i.test(preferredLang) ? 'ru' : 'en';
             $scope.$root.lang = lang;
             $scope.loading = lang === 'ru' ? 'Загрузка...' : 'Loading...';
             $scope.language = $scope.languages[lang];
@@ -61,7 +59,7 @@
                 localStorage[langKey] = lang;
             });
         };
-        $scope.setLang(localStorage[langKey] || navigator.language || 'en');
+        $scope.setLang(localStorage[langKey] || navigator.language);
     }]);
 
     mod.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
