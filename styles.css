@@ -6163,6 +6163,7 @@ button.close {
     display: none !important;
   }
 }
+/* Ubuntu Font Family Bower-ready v0.1.10 */
 /* Ubuntu Mono @font-face kit */
 /* BEGIN Ubuntu Mono Regular */
 @font-face {
@@ -6185,8 +6186,8 @@ button.close {
 /* BEGIN Ubuntu Mono Bold */
 @font-face {
   font-family: 'Ubuntu Monospace';
-  src: url('packages/ubuntu-fontface/fonts/ubuntumono-b-webfont.eot');
-  src: url('packages/ubuntu-fontface/fonts/ubuntumono-b-webfont.eot?#iefix') format('embedded-opentype'), url('packages/ubuntu-fontface/fonts/ubuntumono-b-webfont.woff') format('woff'), url('packages/ubuntu-fontface/fonts/ubuntumono-b-webfont.ttf') format('truetype'), url('packages/ubuntu-fontface/fonts/ubuntumono-b-webfont.svg#ubuntu_monobold') format('svg');
+  src: url('packages/ubuntu-fontface/fonts/ubuntumono-bold-webfont.eot');
+  src: url('packages/ubuntu-fontface/fonts/ubuntumono-bold-webfont.eot?#iefix') format('embedded-opentype'), url('packages/ubuntu-fontface/fonts/ubuntumono-bold-webfont.woff') format('woff'), url('packages/ubuntu-fontface/fonts/ubuntumono-bold-webfont.ttf') format('truetype'), url('packages/ubuntu-fontface/fonts/ubuntumono-bold-webfont.svg#ubuntu_monobold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
