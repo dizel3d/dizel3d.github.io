@@ -36,6 +36,20 @@
     "IT_GLOBAL": {
       "organization": "IT Global LLC",
       "projects": {
+        "CS": {
+          "title": "Local cryptographic server",
+          "achievements": [
+            "Invented and researched the new approach",
+            "Implemented and promoted the solution"
+          ]
+        },
+        "OOW": {
+          "title": "Online Option Workshop",
+          "achievements": [
+            "Developed the project as a lead developer in 5-person team",
+            "Solved a big table synchronization problem"
+          ]
+        },
         "OTC": {
           "title": "The trading terminal for OTC transactions",
           "achievements": [

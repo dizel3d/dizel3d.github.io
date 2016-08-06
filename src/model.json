@@ -13,11 +13,17 @@
       "position": "{{SOFTWARE_DEVELOPER}}",
       "location": "{{ZELENOGRAD}}",
       "projects": {
+        "CS": {
+          "tags": ["WPF", "Nowin", "TypeScript"]
+        },
+        "OOW": {
+          "tags": ["ASP.NET Web API", "linq2db", "SignalR", "AngularJS", "React"]
+        },
         "OTC": {
-          "tags": ["ASP.NET MVC", "ADO.NET EF", "AngularJS", "TypeScript"]
+          "tags": ["ASP.NET Web API", "ADO.NET EF", "SignalR", "AngularJS", "TypeScript"]
         },
         "RCOVER": {
-          "tags": ["ASP.NET MVC", "ADO.NET EF", "AngularJS"]
+          "tags": ["ASP.NET Web API", "ADO.NET EF", "AngularJS"]
         },
         "UniversalEditor": {
           "tags": ["WPF", "WinForms"]
