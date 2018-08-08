@@ -1,5 +1,7 @@
 {
   "SOFTWARE_DEVELOPER": "Software Developer",
+  "SENIOR_DEVELOPER": "Senior Developer",
+  "MOSCOW": "Moscow",
   "ZELENOGRAD": "Zelenograd",
   "MOBILE": "Mobile",
   "LOCATION": "Address",
@@ -33,9 +35,27 @@
     "projects": "Projects"
   },
   "jobs": {
+    "YANDEX": {
+      "organization": "Yandex",
+      "projects": {
+        "PC": {
+          "title": "Projects of advertising technologies",
+          "achievements": [
+            "Contributed to the projects"
+          ]
+        }
+      }
+    },
     "IT_GLOBAL": {
       "organization": "IT Global LLC",
       "projects": {
+        "HERMES": {
+          "title": "Business process automation platform",
+          "achievements": [
+            "Designed together with colleague",
+            "Developed the client side foundation"
+          ]
+        },
         "CS": {
           "title": "Local cryptographic server",
           "achievements": [

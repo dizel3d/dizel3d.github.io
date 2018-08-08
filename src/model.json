@@ -3,16 +3,30 @@
   "mobile": "+7(909)999-29-55",
   "email": "valentin.sarychev@gmail.com",
   "preferences": ["{{WEB_DEVELOPMENT}}", "JavaScript"],
-  "programming_and_markup_languages": ["C#", "JavaScript", "HTML", "CSS", "XML Schema", "SQL"],
-  "popular_libraries_and_frameworks": ["AngularJS", "lodash", "Jasmine", "WPF", "ASP.NET", "NUnit"],
-  "software": ["MS Visual Studio", "JetBrains WebStorm/TeamCity/.NET tools", "MS SQL Server", "IIS", "Atlassian Confluence/Jira", "Redmine", "Git", "Karma", "Gulp", "Webpack"],
-  "os_user": ["Windows", "Linux", "Mac OS"],
+  "programming_and_markup_languages": ["JavaScript", "C#", "HTML", "CSS", "SQL"],
+  "popular_libraries_and_frameworks": ["React", "Redux", "AngularJS", "ASP.NET", "WPF"],
+  "software": ["WebStorm", "MS Visual Studio"],
+  "os_user": ["macOS", "Windows", "Linux"],
   "jobs": {
+    "YANDEX": {
+      "fromDate": "2017-09",
+      "position": "{{SENIOR_DEVELOPER}}",
+      "location": "{{MOSCOW}}",
+      "projects": {
+        "PC": {
+          "tags": ["TypeScript"]
+        }
+      }
+    },
     "IT_GLOBAL": {
       "fromDate": "2011-12",
+      "toDate": "2017-08",
       "position": "{{SOFTWARE_DEVELOPER}}",
       "location": "{{ZELENOGRAD}}",
       "projects": {
+        "HERMES": {
+          "tags": ["React", "Redux", "TypeScript", "ASP.NET Core"]
+        },
         "CS": {
           "tags": ["WPF", "Nowin", "TypeScript"]
         },
